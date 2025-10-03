@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Telecom / Electrical Services</title>
+  <meta name="description" content="Servicios eléctricos, mantenimiento y telecomunicaciones. Contacto, portafolio y soporte técnico." />
+  <!-- Tailwind CDN (quick prototyping) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased text-gray-800">
+  <header class="bg-blue-800 text-white">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="bg-white rounded-md p-2 text-blue-800 font-bold">LOGO</div>
+        <span class="font-semibold text-lg">My Telecom</span>
+      </a>
+      <nav class="hidden md:flex gap-6">
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+      <a href="mailto:info@example.com" class="hidden md:inline-block bg-white text-blue-800 px-4 py-2 rounded">Contact Us</a>
+      <button class="md:hidden" id="menuBtn">☰</button>
+    </div>
+    <div id="mobileMenu" class="hidden bg-blue-700 px-6 pb-4 md:hidden">
+      <a href="#services" class="block py-2">Services</a>
+      <a href="#about" class="block py-2">About</a>
+      <a href="#contact" class="block py-2">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="bg-[url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1400&auto=format&fit=crop&s=')] bg-cover bg-center text-white">
+      <div class="backdrop-brightness-50 py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+          <h1 class="text-4xl md:text-5xl font-bold">Reliable Telecommunications & Electrical Services</h1>
+          <p class="mt-4 text-lg">Instalación, mantenimiento y soporte técnico — soluciones para hogares y empresas.</p>
+          <div class="mt-6 flex justify-center gap-4">
+            <a href="#contact" class="bg-yellow-400 text-black px-5 py-3 rounded-md font-semibold">Get a Quote</a>
+            <a href="#services" class="border border-white px-5 py-3 rounded-md">Our Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="max-w-6xl mx-auto px-6 py-12">
+      <h2 class="text-2xl font-semibold mb-6">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="p-6 border rounded-lg">
+          <h3 class="font-bold">Telecom Installations</h3>
+          <p class="mt-2 text-sm">Fiber optics, antenna alignment, data networks and more.</p>
+        </article>
+        <article class="p-6 border rounded-lg">
+          <h3 class="font-bold">Electrical Works</h3>
+          <p class="mt-2 text-sm">Low-voltage installations, panels, lighting and maintenance.</p>
+        </article>
+        <article class="p-6 border rounded-lg">
+          <h3 class="font-bold">Preventive Maintenance</h3>
+          <p class="mt-2 text-sm">Scheduled checks and fast on-site support.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="bg-gray-50 py-10">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-2xl font-semibold">About Us</h2>
+        <p class="mt-3">Small team of certified technicians with experience in telecoms and electrical projects. We focus on reliable service and clear pricing.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="max-w-3xl mx-auto px-6 py-12">
+      <h2 class="text-2xl font-semibold">Contact</h2>
+      <p class="mt-2">Call or write via WhatsApp for quickest response.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="p-6 border rounded">
+          <h3 class="font-bold">Call / WhatsApp</h3>
+          <p class="mt-1">+57 300 000 0000</p>
+          <a href="https://wa.me/573000000000" class="inline-block mt-3 text-sm underline">Open WhatsApp</a>
+        </div>
+        <form class="p-6 border rounded" action="mailto:info@example.com" method="post" enctype="text/plain">
+          <label class="block">Name</label>
+          <input class="w-full mt-1 p-2 border rounded" name="name">
+          <label class="block mt-3">Message</label>
+          <textarea class="w-full mt-1 p-2 border rounded" name="message"></textarea>
+          <div class="mt-3">
+            <button type="submit" class="bg-blue-800 text-white px-4 py-2 rounded">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
+      <div>© <span id="year"></span> My Telecom. All rights reserved.</div>
+      <div class="mt-3 md:mt-0">Powered by a static site — no monthly fees required.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
